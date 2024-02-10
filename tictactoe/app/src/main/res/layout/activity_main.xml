@@ -8,6 +8,28 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="3pt"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etp1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:hint="Player 1"/>
+
+        <EditText
+            android:id="@+id/etp2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:hint="Player 2"/>
+
+    </TableRow>
 
     <TableRow
         android:layout_width="match_parent"

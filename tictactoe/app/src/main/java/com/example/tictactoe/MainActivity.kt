@@ -1,11 +1,13 @@
 package com.example.tictactoe
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import java.util.Random
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +21,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var b7:Button
     lateinit var b8:Button
     lateinit var b9:Button
+    lateinit var p1:EditText
+    lateinit var p2:EditText
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,6 +38,8 @@ class MainActivity : AppCompatActivity() {
         b7 = findViewById(R.id.bu7)
         b8 = findViewById(R.id.bu8)
         b9 = findViewById(R.id.bu9)
+        p1 = findViewById(R.id.etp1)
+        p2 = findViewById(R.id.etp2)
     }
 
     fun buclick(view: View) {
@@ -148,12 +155,12 @@ class MainActivity : AppCompatActivity() {
         //declare a result
         if (winner == 1){
             player1winscount = player1winscount + 1
-            Toast.makeText(this,"Player 1 win the game..",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"${p1.text} win the game..",Toast.LENGTH_LONG).show()
             restartgame()
         }
         else if(winner == 2){
             player2winscount = player2winscount + 2
-            Toast.makeText(this,"Player 2 win the game..",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"${p2.text} win the game..",Toast.LENGTH_LONG).show()
             restartgame()
         }
     }
@@ -217,7 +224,7 @@ class MainActivity : AppCompatActivity() {
             buSelected.isEnabled = true
         }
 
-        Toast.makeText(this,"Player 1:  $player1winscount,   Player 2:  $player2winscount ",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"${p1.text}:  $player1winscount,   ${p2.text}:  $player2winscount ",Toast.LENGTH_SHORT).show()
     }
 
 }
